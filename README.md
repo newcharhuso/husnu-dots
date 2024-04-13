@@ -11,14 +11,19 @@
 You can place all the files yourself but I tried to create an installer. Couldn't test it yet so be crarefull about it.
 
 ## Manual
-Copy the files inside the extensions directory to ~/.local/share/gnome-shell/extensions
-Copy the files inside the icons directory to /usr/share/icons
-Copy the files inside the themes directory to /usr/share/themes
-Copy the files inside the tilix directory to ~/.config/tilix/schemes
+
+Copy the files inside the extensions directory to ~/.local/share/gnome-shell/extensions.
+
+Copy the files inside the icons directory to /usr/share/icons.
+
+Copy the files inside the themes directory to /usr/share/themes.
+
+Copy the files inside the tilix directory to ~/.config/tilix/schemes.
+
 
 For Firefox and rofi theme installations, please refer to cretor's repositories.
 
-For spicetify run the following commands, if you have flatpak version enabled you need to specify the paths to your spotify installation and preferences location, be careful about not using '~' for your home folder, for more detailed installation explanation please refer to github page of the creators.
+For Spicetify run the following commands, if you have flatpak version of the Spotify you need to specify the paths to your spotify installation and preferences location, be careful about not using '~' for your home folder, for more detailed installation explanation please refer to github page of the creators.
 
 ```
 #If you've run spicetify before ignore the first line of code
