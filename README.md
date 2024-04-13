@@ -8,7 +8,7 @@
 
 ## Installer script
 
-You can place all the files yourself but I tried to create an installer. Couldn't try it yet so be crarefull about it.
+You can place all the files yourself but I tried to create an installer. Couldn't test it yet so be crarefull about it.
 
 ## Manual
 Copy the files inside the extensions directory to ~/.local/share/gnome-shell/extensions
