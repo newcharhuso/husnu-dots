@@ -1,0 +1,116 @@
+/* everforest.css  everforest-light.css  gruvbox.css  mocha.css  nord.css  solarized.css */
+@import "colors/nord.css";
+
+/* margin: top right bottom left */
+/* Spacing outside the element */
+
+/* padding: top right bottom left */
+/* Spacing inside the element */
+
+* {
+  font-family: JetBrainsMono Nerd Font, FontAwesome;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+window#waybar {
+  background-color: #88383C;
+  color: @bg0;
+  transition-property: background-color;
+  transition-duration: 0.5s;
+  border-radius: 15px 15px 15px 15px;
+  transition-duration: .5s;
+}
+#workspaces button {
+  box-shadow: none;
+  text-shadow: none;
+  padding: 0px;
+  border-radius: 13px;
+  border-color: #A020FF;
+  margin-top: 3px;
+  margin-bottom: 3px;
+
+  color: #f1f1f1;
+}
+
+#workspaces button.active {
+  background: #0a0000;
+  color: #ffffff;
+  border-radius: 13px;
+  border-color: #0a0000;
+  border-radius: 0px 0px 0px 0px;
+}
+
+#workspaces button:hover {
+  background: #d0ddd6;
+  color: #313244;
+  border-radius: 0px 0px 0px 0px;
+}
+#pulseaudio-slider slider {
+  color: #0a0000;
+  opacity: 0;
+  background-image: none;
+  background-color: #0a0000;
+  border: none;
+  box-shadow: none;
+}
+
+#pulseaudio-slider trough {
+  color: #0a0000;
+  min-height: 8px;
+  min-width: 1px;
+  background-color: #0a0000;
+  border-radius: 5px;
+}
+
+#pulseaudio-slider highlight {
+ color: #0a0000;
+  min-width: 1px;
+  border-radius: 1px;
+  background-color: #0a0000;
+}
+
+#tray,
+#custom-launcher,
+#clock,
+#clock-date,
+#pulseaudio,
+#network,
+#battery,
+#bluetooth,
+#custom-media,
+#custom-powermenu {
+  color: #afbbcc;
+
+  padding-left: 10px;
+  padding-right: 10px;
+  margin-top: 7px;
+  margin-bottom: 4px;
+	border-radius: 10px;
+}
+
+#custom-space {
+  min-width: 10px;
+  min-height: 10px;
+}
+
+#custom-launcher {
+  background-color: #d3896b;
+  color: @bg0;
+  border-bottom-color: #465000;
+
+  margin-left: 15px;
+  padding-left: 20px;
+  padding-right: 21px;
+}
+
+#custom-powermenu {
+  background-color: @red;
+  color: @bg0;
+  border-bottom-color: #9e0906;
+
+  margin-right: 15px;
+  padding-left: 20px;
+  padding-right: 23px;
+}
+

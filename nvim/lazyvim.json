@@ -1,0 +1,12 @@
+{
+  "extras": [
+    "lazyvim.plugins.extras.coding.copilot",
+    "lazyvim.plugins.extras.lang.clangd",
+    "lazyvim.plugins.extras.lang.cmake",
+    "lazyvim.plugins.extras.lang.python"
+  ],
+  "news": {
+    "NEWS.md": "3314"
+  },
+  "version": 3
+}

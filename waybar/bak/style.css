@@ -1,0 +1,90 @@
+@import "colors/mocha.css";
+
+/* margin: top right bottom left */
+/* Spacing outside the element */
+
+/* padding: top right bottom left */
+/* Spacing inside the element */
+
+* {
+  font-family: JetBrainsMono Nerd Font, FontAwesome;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+window#waybar {
+  background-color: #295890;
+  color: @bg0;
+  transition-property: background-color;
+  transition-duration: 0.5s;
+  border-radius: 15px 15px 15px 15px;
+  transition-duration: .5s;
+
+  border-bottom-width: 5px;
+  border-bottom-color: #958901;
+  border-bottom-style: solid;
+}
+
+#tray,
+#custom-launcher,
+#clock,
+#clock-date,
+#workspaces,
+#pulseaudio,
+#network,
+#battery,
+#bluetooth,
+#custom-media,
+#custom-powermenu {
+  color: #afbbcc;
+
+  padding-left: 10px;
+  padding-right: 10px;
+  margin-top: 7px;
+  margin-bottom: 12px;
+	border-radius: 10px;
+
+  border-bottom-width: 5px;
+  border-bottom-color: @bg5;
+  border-bottom-style: solid;
+  background-color: #7a828e;
+}
+
+#workspaces {
+  padding: 0px;
+  background-color: #7a828e;
+}
+
+#workspaces button.active {
+  background-color: #5a6e9e;
+  color: @bg0;
+
+	border-radius: 10px;
+
+  margin-bottom: -5px;
+
+  border-bottom-width: 5px;
+  border-bottom-color: #1c4a62;
+  border-bottom-style: solid;
+}
+
+#custom-launcher {
+  background-color: #d3896b;
+  color: @bg0;
+  border-bottom-color: #465000;
+
+  margin-left: 15px;
+  padding-left: 20px;
+  padding-right: 21px;
+}
+
+#custom-powermenu {
+  background-color: @red;
+  color: @bg0;
+  border-bottom-color: #9e0906;
+
+  margin-right: 15px;
+  padding-left: 20px;
+  padding-right: 23px;
+}
+

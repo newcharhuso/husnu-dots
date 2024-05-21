@@ -1,0 +1,155 @@
+
+[
+    {
+        "margin-top": 20,
+        "margin-bottom": 20,
+        "margin-right": 5,
+        "layer": "top",
+        "spacing": 10,
+        "position": "right",
+
+        "modules-left": [ "custom/empty_top","wlr/taskbar", "tray"],
+        "modules-center": ["hyprland/workspaces"],
+        "modules-right": ["group/indicators", "group/datetime" ,"custom/empty_top"],
+
+        "group/datetime": {
+            "orientation": "vertical",
+            "modules": ["clock#dow", "clock#dom", "clock#mon", "clock#HM"]
+        },
+    
+        "group/indicators": {
+            "orientation": "vertical",
+            "modules": [ "battery","bluetooth", "pulseaudio"]
+        },
+    "tray": {
+      "icon-size": 16,
+      "spacing": 15,
+      "padding": 50,
+    },
+   "custom/empty_top": {
+        "format": " ",
+        "interval": 86400, // This is a long interval to reduce unnecessary updates
+        "tooltip": false,
+        "padding": { "top": 5 },
+    },
+        
+ "hyprland/workspaces": {
+    "disable-scroll": true,
+		"format": " {icon}",
+		"format-icons": {
+			"1" : "一",
+			"2" : "二",
+			"3" : "三",
+			"4" : "四",
+			"5" : "五",
+			"6" : "六",
+			"7" : "七",
+			"8" : "八",
+			"9" : "九",
+			"10" : "十",
+		},
+        "persistent_workspaces": {
+            "1": [],
+            "2": [],
+            "3": [],
+            "4": [],
+            "5": [],
+            "6": [],
+            "7": [],
+            "8": [],
+            "9": [],
+        },
+    },
+"bluetooth": {
+        // "controller": "controller1", // specify the alias of the controller if there are more than 1 on the system
+        // "format": "󰂯 {status}",
+        // format-* handles every state, so default format is not necessary.
+        "on-click": "sh ~/rofi-bluetooth/rofi-bluetooth", 
+        "format-on": "󰂯",
+        "format-off": "󰂲",
+        "format-disabled": "", // an empty format will hide the module
+        "format-connected": "󰂱 {num_connections}",
+        // "tooltip-format": "{controller_alias}\t{controller_address}",
+        // "tooltip-format-connected": "{controller_alias}\t{controller_address}\n\n{device_enumerate}",
+        "tooltip-format-connected": "{device_enumerate}",
+        "tooltip-format-enumerate-connected": "{device_alias}\t{device_address}",
+ },
+"pulseaudio": {
+    "format": " {icon}\n{volume}",
+    "format-muted": "󰖁",
+    "format-icons": {
+      "headphone": "",
+      "hands-free": "",
+      "headset": "󰋎",
+      "phone": "",
+      "portable": "",
+      "car": "",
+      "default": ["", "", ""]
+    },
+    "on-click": "pactl set-sink-mute @DEFAULT_SINK@ toggle",
+    "on-click-right": "pavucontrol"
+  },
+      "pulseaudio/slider": {
+      "min": 0,
+      "max": 100,
+      "orientation": "horizontal"
+      },
+        "wlr/taskbar": {
+            "active-first": true,
+            "format": "{icon}",
+            "icon-size": 16,
+            "tooltip-format": "{title}",
+            "on-click": "activate",
+            "all-outputs": true
+        },
+        "clock#dow": {
+            "format": "{:%a}"
+        },
+        "clock#dom": {
+            "format": "{:%d}",
+            "tooltip-format": "<big><span color='#ffcc66' size='13pt'>{:%Y %B}</span></big>\n<tt><small>{calendar}</small></tt>",
+            // "tooltip-format": "{calendar}",
+            "calendar": {
+                "mode": "month",
+                "on-scroll": 1,
+                "format": {
+                    // "months": "<big><span color='#ffead3' size='11pt'><b>{}</b></span></big>",
+                    "months": "",
+                    "days": "<tt><span color='#ecc6d9' size='11pt'>{}</span></tt>",
+                    "weeks": "<tt><span color='#99ffdd' size='11pt'><b>W{}</b></span></tt>",
+                    "weekdays": "<tt><span color='#ffcc66' size='11pt'><b>{}</b></span></tt>",
+                    "today": "<tt><span color='#ff6699' size='11pt'><b><u>{}</u></b></span></tt>"
+                }
+            },
+            "actions": {
+                "on-scroll-up": "shift_up",
+                "on-scroll-down": "shift_down"
+            }
+        },
+        "clock#mon": {
+            "format": "{:%b}",
+            "tooltip-format": "<big><span color='#ffcc66' size='13pt'>{:%Y %B}</span></big>\n<tt><small>{calendar}</small></tt>",
+            // "tooltip-format": "{calendar}",
+            "calendar": {
+                "mode": "month",
+                "on-scroll": 1,
+                "format": {
+                    // "months": "<big><span color='#ffead3' size='11pt'><b>{}</b></span></big>",
+                    "months": "",
+                    "days": "<tt><span color='#ecc6d9' size='11pt'>{}</span></tt>",
+                    "weeks": "<tt><span color='#99ffdd' size='11pt'><b>W{}</b></span></tt>",
+                    "weekdays": "<tt><span color='#ffcc66' size='11pt'><b>{}</b></span></tt>",
+                    "today": "<tt><span color='#ff6699' size='11pt'><b><u>{}</u></b></span></tt>"
+                }
+            },
+            "actions": {
+                "on-scroll-up": "shift_up",
+                "on-scroll-down": "shift_down"
+            }
+        },
+
+        "clock#HM": {
+            "format": "{:%H\n%M}"
+        }
+    },
+]

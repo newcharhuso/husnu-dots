@@ -1,0 +1,162 @@
+{ 
+  "margin-left": 450,
+  "margin-right": 450,
+  "spacing" : 5,
+  "layer": "left",
+  "position": "left",
+  "height": 40,
+  "modules-left": ["clock",  "network"],
+  "modules-center": ["hyprland/workspaces"],
+  "modules-right": [
+    "custom/media",
+    "bluetooth",
+    "tray",
+    "pulseaudio",
+  ],
+  // Modules configuration
+
+  "custom/media": {
+    	"exec": "~/.config/waybar/scripts/media_status.sh",
+    	"interval": 1, // Update every 5 seconds
+    	"format": "{}",
+    	"on-click": "playerctl play-pause", // Toggle play/pause on click
+    	"on-scroll-up": "playerctl next", 
+    	"on-scroll-down": "playerctl previous", 
+    	"tooltip": true,
+      "min-length" : 25,
+      "max-length" : 25,
+},
+"bluetooth": {
+        // "controller": "controller1", // specify the alias of the controller if there are more than 1 on the system
+        // "format": "󰂯 {status}",
+        // format-* handles every state, so default format is not necessary.
+        "on-click": "sh ~/rofi-bluetooth/rofi-bluetooth", 
+        "format-on": "󰂯",
+        "format-off": "󰂲",
+        "format-disabled": "", // an empty format will hide the module
+        "format-connected": "󰂱 {num_connections}",
+        // "tooltip-format": "{controller_alias}\t{controller_address}",
+        // "tooltip-format-connected": "{controller_alias}\t{controller_address}\n\n{device_enumerate}",
+        "tooltip-format-connected": "{device_enumerate}",
+        "tooltip-format-enumerate-connected": "{device_alias}\t{device_address}",
+        "max-length": 4,
+        "min-length": 4
+ },
+  "clock": {
+    "format": "{:%d/%m %H:%M}",
+    "tooltip": "false",
+    //        	"tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
+    "format-alt": "{:%a %d %B %Y}",
+
+    "on-click-right": "swaync-client -t"
+  },
+
+  "hyprland/window": {
+    "format": "{}",
+    "rewrite": {
+      "(.*) — Mozilla Firefox": "󰈹 $1",
+      "(.*) - zsh": "> [$1]"
+    },
+    "separate-outputs": true
+  },
+
+    "hyprland/workspaces": {
+        "disable-scroll": true,
+		"format": " {icon}",
+		"format-icons": {
+			"1" : "一",
+			"2" : "二",
+			"3" : "三",
+			"4" : "四",
+			"5" : "五",
+			"6" : "六",
+			"7" : "七",
+			"8" : "八",
+			"9" : "九",
+			"10" : "十",
+		},
+        "persistent_workspaces": {
+            "1": [],
+            "2": [],
+            "3": [],
+            "4": [],
+            "5": [],
+            "6": [],
+            "7": [],
+            "8": [],
+            "9": [],
+        },
+    },
+  "wlr/taskbar": {
+    "format": "{icon}",
+    "icon-size": 14,
+    "tooltip-format": "{title}",
+    "on-click": "activate",
+    "on-click-middle": "close",
+    "ignore-list": ["kitty"],
+    "rewrite": {
+      "Firefox Web Browser": "Firefox",
+      "Foot Server": "Terminal"
+    }
+  },
+  "memory": {
+    "interval": 5,
+    "format": "{used:0.1f}G/{total:0.1f}G "
+  },
+  "cpu": {
+    "interval": 1,
+    "format": "{usage}% "
+  },
+
+  "battery": {
+    "states": {
+      "good": 95,
+      "warning": 30,
+      "critical": 15
+    },
+    "format": "{icon}  {capacity}%",
+    "format-charging": "{capacity}% 󱐋",
+    "format-plugged": "{capacity}% ",
+    "format-alt": "{icon} {time}",
+    // "format-good": "", // An empty format will hide the module
+    // "format-full": "",
+    "format-icons": ["", "", "", "", ""]
+  },
+
+  "network": {
+    "format-wifi": "  {essid}",
+    "format-ethernet": "󰈀 Connected",
+    "format-linked": "󰜏 {ifname} (No IP)",
+    "format-disconnected": "Disconnected",
+    "on-click" : "$HOME/.config/rofi/rofi-wifi-menu.sh"
+  },
+
+  "tray": {
+    "icon-size": 17,
+    "spacing": 5
+  },
+
+  "backlight": {
+    // "device": "acpi_video1",
+    "format": "{icon} {percent}%",
+    "format-icons": ["", "", "", "", "", "", "", "", ""]
+    //	"on-scroll-up":,
+    //	"on-scroll-down":,
+  },
+
+  "pulseaudio": {
+    "format": "{icon}  {volume}%",
+    "format-muted": "󰖁 muted",
+    "format-icons": {
+      "headphone": "",
+      "hands-free": "",
+      "headset": "󰋎",
+      "phone": "",
+      "portable": "",
+      "car": "",
+      "default": ["", "", ""]
+    },
+    "on-click": "pactl set-sink-mute @DEFAULT_SINK@ toggle",
+    "on-click-right": "pavucontrol"
+  }
+}

@@ -1,0 +1,10 @@
+05:50:31 [0m[34m[INFO] [0m(main) Selected wl_shm format: Bgr888
+05:50:31 [0m[34m[INFO] [0m(main) Initialization succeeded! Starting main loop...
+05:50:31 [0m[33m[WARN] [0m(main) Received transform. We currently ignore those
+05:50:31 [0m[33m[WARN] [0m(main) Received transform. We currently ignore those
+06:48:19 [0m[34m[INFO] [0m(main) Goodbye!
+06:48:19 [0m[34m[INFO] [0m(main) Removed socket at "/run/user/1000/swww-wayland-1.socket"
+[130 09:12:49.936013] Ignoring invalid config line: ',# BEGIN_KITTY_THEME'
+xkbcommon: ERROR: couldn't find a Compose file for locale "en_US.UTF_8" (mapped to "en_US.UTF_8")
+[130 09:12:49.993628] [glfw error 65544]: Failed to create XKB compose table for locale en_US.UTF_8
+[130 09:12:50.009008] The output buffer does not support sRGB color encoding, colors will be incorrect.

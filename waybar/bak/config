@@ -1,0 +1,164 @@
+{
+  "margin-top": 5,
+  "margin-left": 20,
+  "margin-bottom": 0,
+  "margin-right": 20,
+  "height": 60, 
+  "layer": "top",
+  "position": "top",
+  "output": ["HDMI-A-1", "eDP-1"],
+  "spacing": 15,
+  "modules-left": ["custom/launcher","clock", "clock#date"],
+  "modules-center": ["hyprland/workspaces","custom/media"],
+  "modules-right": ["tray","pulseaudio", "network", "bluetooth", "custom/powermenu"],
+    "tray" :{
+        "spacing" : 10,
+      },
+    "hyprland/workspaces": {
+        "disable-scroll": true,
+		"format": " {icon}",
+		"format-icons": {
+			"1" : "一",
+			"2" : "二",
+			"3" : "三",
+			"4" : "四",
+			"5" : "五",
+			"6" : "六",
+			"7" : "七",
+			"8" : "八",
+			"9" : "九",
+			"10" : "十",
+		},
+        "persistent_workspaces": {
+            "1": [],
+            "2": [],
+            "3": [],
+            "4": [],
+            "5": [],
+            "6": [],
+            "7": [],
+            "8": [],
+            "9": [],
+        },
+    },
+  
+  "custom/launcher": {
+      "interval": "once",
+      "format": "󰣇",
+      "on-click": "pkill rofi || rofi -show drun",
+      "tooltip": false
+    },
+
+    "backlight": {
+      "device": "nvidia_0",
+      "max-length": "4",
+      "format": "{icon}",
+      "tooltip-format": "{percent}%",
+      "format-icons": ["","","","", "", "", ""],
+      "on-click": "",
+      "on-scroll-up": "brightnessctl set 10%-",
+      "on-scroll-down": "brightnessctl set +10%"
+  },
+  
+  "custom/media": {
+    	"exec": "~/.config/waybar/scripts/media_status.sh",
+    	"interval": 1, // Update every 5 seconds
+    	"format": "{}",
+    	"on-click": "playerctl play-pause", // Toggle play/pause on click
+    	"on-scroll-up": "playerctl next", 
+    	"on-scroll-down": "playerctl previous", 
+    	"tooltip": true,
+      "min-length" : 25,
+      "max-length" : 25,
+},
+  
+  "memory": {
+    "interval": 30,
+    "format": "  {}%",
+    "format-alt":" {used:0.1f}G",
+    "max-length": 10
+},
+
+  "custom/dunst": {
+      "exec": "~/.config/waybar/scripts/dunst.sh",
+      "on-click": "dunstctl set-paused toggle",
+      "restart-interval": 1,
+      "tooltip": false
+  },
+  
+"bluetooth": {
+        // "controller": "controller1", // specify the alias of the controller if there are more than 1 on the system
+        // "format": "󰂯 {status}",
+        // format-* handles every state, so default format is not necessary.
+        "on-click": "sh ~/rofi-bluetooth/rofi-bluetooth", 
+        "format-on": "󰂯",
+        "format-off": "󰂲",
+        "format-disabled": "", // an empty format will hide the module
+        "format-connected": "󰂱 {num_connections}",
+        // "tooltip-format": "{controller_alias}\t{controller_address}",
+        // "tooltip-format-connected": "{controller_alias}\t{controller_address}\n\n{device_enumerate}",
+        "tooltip-format-connected": "{device_enumerate}",
+        "tooltip-format-enumerate-connected": "{device_alias}\t{device_address}",
+        "max-length": 4,
+        "min-length": 4
+ },
+
+
+  "pulseaudio": {
+      "format": "{icon} {volume}%",
+      "format-bluetooth": "{icon}  {volume}%",
+      "format-bluetooth-muted": "婢  muted",
+      "format-muted": "婢 muted",
+      "format-icons": {
+          "headphone": "",
+          "hands-free": "",
+          "headset": "",
+          "phone": "",
+          "portable": "",
+          "car": "",
+          "default": ["", "", ""]
+      },
+      "on-click-right": "pavucontrol",
+    "on-click": "pactl set-sink-mute @DEFAULT_SINK@ toggle",
+  },
+
+"network": {
+      "format-wifi": " {signalStrength}%",
+      "format-ethernet": " {signalStrength}%",
+      "format-disconnected": "󰤭",
+      "on-click": "sh ~/.config/rofi/launchers/type-6/rofi-wifi-menu/rofi-wifi-menu.sh"
+},
+
+"battery": {
+    "bat": "BAT0",
+    "adapter": "ADP0",
+    "interval": 60,
+    "states": {
+        "warning": 30,
+        "critical": 15
+    },
+    "max-length": 10,
+    "format": "{icon} {capacity}%",
+    "format-warning": "{icon} {capacity}%",
+    "format-critical": "{icon} {capacity}%",
+    "format-charging": " {capacity}%",
+    "format-plugged": " {capacity}%",
+    "format-alt": "{icon} {capacity}%",
+    "format-full": " 100%",
+    "format-icons": ["", "", "", "", "", "", "", "", "", ""]
+},
+
+"clock": {
+    "format": " {:%H:%M}"
+},
+
+"clock#date": {
+  "format": " {:%A, %B %d, %Y}"
+},
+
+"custom/powermenu": {
+    "format": "",
+    "on-click": "pkill wofi || rofi -show power-menu -modi power-menu:$HOME/.config/rofi/rofi-power-menu",
+    "tooltip": false
+  }
+}
