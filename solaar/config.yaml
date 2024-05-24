@@ -1,0 +1,25 @@
+- 1.1.13
+- _NAME: Logi POP Keys
+  _absent: [hi-res-scroll, lowres-scroll-mode, hires-smooth-invert, hires-smooth-resolution, hires-scroll-mode, scroll-ratchet, smart-shift, thumb-scroll-invert,
+    thumb-scroll-mode, onboard_profiles, report_rate, report_rate_extended, pointer_speed, dpi, dpi_extended, speed-change, backlight, backlight_level,
+    backlight_duration_hands_out, backlight_duration_hands_in, backlight_duration_powered, backlight-timed, led_control, led_zone_, rgb_control, rgb_zone_,
+    brightness_control, per-key-lighting, reprogrammable-keys, persistent-remappable-keys, crown-smooth, divert-crown, divert-gkeys, m-key-leds, mr-key-led,
+    gesture2-gestures, gesture2-divert, gesture2-params, sidetone, equalizer, adc_power_management]
+  _battery: 4100
+  _modelId: B36500000000
+  _sensitive: {change-host: ignore, disable-keyboard-keys: ignore, divert-keys: true, multiplatform: ignore}
+  _serial: FC495194
+  _unitId: FC495194
+  _wpid: B365
+  change-host: null
+  disable-keyboard-keys: {1: false, 8: false, 16: false}
+  divert-keys: {110: 0, 228: 0, 229: 0, 230: 0, 231: 0, 232: 0, 233: 0, 259: 0, 260: 1, 261: 1, 262: 1, 263: 1, 264: 1, 266: 0, 284: 0}
+  fn-swap: true
+  multiplatform: 0
+- _NAME: Wireless Keyboard MK270
+  _modelId: Wireless Keyboard MK270
+  _sensitive: {hires-scroll-mode: ignore, hires-smooth-invert: ignore, hires-smooth-resolution: ignore}
+  _serial: '00000000'
+  _unitId: '00000000'
+  _wpid: '4023'
+  fn-swap: false

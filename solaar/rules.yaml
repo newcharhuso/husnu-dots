@@ -1,0 +1,42 @@
+%YAML 1.3
+---
+- Key: ['0', pressed]
+...
+---
+- Key: [Open Emoji Panel, pressed]
+- KeyPress:
+  - End
+  - click
+...
+---
+- Key: [Emoji Smilie With Tears, pressed]
+- KeyPress:
+  - Home
+  - click
+...
+---
+- Key: [Emoji Smiley, pressed]
+- Execute: kitty
+...
+---
+- Key: [Emoji Crying Face, pressed]
+- KeyPress:
+  - [Control_L, Alt_L, y]
+  - click
+...
+---
+- Key: [Emoji Smiley Heart Eyes, pressed]
+- Execute: firefox
+...
+---
+- Key: [Snipping Tool, pressed]
+- KeyPress:
+  - Print
+  - click
+...
+---
+- Key: [Mute Microphone, pressed]
+- KeyPress:
+  - XF86_AudioMicMute
+  - click
+...
