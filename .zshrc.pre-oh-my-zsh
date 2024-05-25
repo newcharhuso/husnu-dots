@@ -1,0 +1,2 @@
+source /home/husnu/.oh-my-zsh/oh-my-zsh.sh
+ZSH_THEME="powerlevel10k/powerlevel10k"
